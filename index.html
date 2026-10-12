@@ -84,6 +84,20 @@
         animation: floatIn 0.75s ease-out both;
       }
 
+      .reveal-item {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: var(--reveal-delay, 0ms);
+      }
+
+      .reveal-item.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
       .project-card {
         opacity: 0;
         animation: cardReveal 0.8s ease-out forwards;
@@ -108,6 +122,22 @@
       .glass-panel {
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .reveal-item {
+          opacity: 1;
+          transform: none;
+        }
       }
     </style>
   </head>
@@ -455,14 +485,14 @@
 
         <div class="grid gap-6 lg:grid-cols-3">
           <article
-            class="hover-lift overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
+            class="hover-lift flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
           >
             <div
               class="h-40 bg-gradient-to-br from-brand-500/40 to-cyan-500/20"
             >
           <img src="./image/protfolio.png" alt="protfolio">
           </div>
-            <div class="p-6">
+            <div class="flex flex-1 flex-col p-6">
               <h3 class="text-xl font-semibold text-white">
                 Portfolio Website
               </h3>
@@ -481,12 +511,12 @@
                   >Responsive Design</span
                 >
               </div>
-              <div class="mt-5 flex flex-wrap gap-3">
+              <div class="mt-auto pt-6">
                 <a
                   href="https://sourav-das999.github.io/Protfolio-website-1/"
                   target="_blank"
                   rel="noreferrer"
-                  class="text-sm font-semibold text-brand-400 transition hover:text-brand-300"
+                  class="flex w-full items-center justify-center gap-2 rounded-xl border border-violet-400/50 bg-brand-500/10 px-4 py-3 text-sm font-semibold text-violet-100 transition hover:border-fuchsia-300 hover:bg-brand-500 hover:text-white hover:shadow-lg hover:shadow-violet-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                 >
                   View Project →
                 </a>
@@ -495,14 +525,50 @@
           </article>
 
           <article
-            class="hover-lift overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
+            class="hover-lift flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
+          >
+            <div
+              class="h-40 bg-gradient-to-br from-violet-500/30 to-fuchsia-500/20"
+            >
+          <img src="./image/evenza.png" alt="evenza"></div>
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-xl font-semibold text-white">Evenza Website</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-400">
+                A modern website with a polished visual style and responsive
+                layout.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full bg-slate-800 px-3 py-1 text-sm text-slate-300"
+                  >Business Website</span
+                >
+                <span
+                  class="rounded-full bg-slate-800 px-3 py-1 text-sm text-slate-300"
+                  >Responsive Design</span
+                >
+              </div>
+              <div class="mt-auto pt-6">
+                <a
+                  href="https://sourav-das999.github.io/evenza_website/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="flex w-full items-center justify-center gap-2 rounded-xl border border-violet-400/50 bg-brand-500/10 px-4 py-3 text-sm font-semibold text-violet-100 transition hover:border-fuchsia-300 hover:bg-brand-500 hover:text-white hover:shadow-lg hover:shadow-violet-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+                >
+                  View Project →
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="hover-lift flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
           >
             <div
               class="h-40 bg-gradient-to-br from-amber-500/30 to-orange-500/20"
             >
           <img src="./image/Nasscorp.png" alt="Nasscorp">
           </div>
-            <div class="p-6">
+            <div class="flex flex-1 flex-col p-6">
               <h3 class="text-xl font-semibold text-white">Nasscorp</h3>
               <p class="mt-3 text-sm leading-7 text-slate-400">
                 A polished web project showcasing clear structure, modern
@@ -518,12 +584,12 @@
                   >Brand Website</span
                 >
               </div>
-              <div class="mt-5 flex flex-wrap gap-3">
+              <div class="mt-auto pt-6">
                 <a
                   href="https://sourav-das999.github.io/Nasscorp/"
                   target="_blank"
                   rel="noreferrer"
-                  class="text-sm font-semibold text-brand-400 transition hover:text-brand-300"
+                  class="flex w-full items-center justify-center gap-2 rounded-xl border border-violet-400/50 bg-brand-500/10 px-4 py-3 text-sm font-semibold text-violet-100 transition hover:border-fuchsia-300 hover:bg-brand-500 hover:text-white hover:shadow-lg hover:shadow-violet-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                 >
                   View Project →
                 </a>
@@ -532,14 +598,14 @@
           </article>
 
           <article
-            class="hover-lift overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
+            class="hover-lift flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
           >
             <div
               class="h-40 bg-gradient-to-br from-yellow-500/30 to-amber-500/20"
             >
           <img src="./image/Coffee.png" alt="Coffee Website">
           </div>
-            <div class="p-6">
+            <div class="flex flex-1 flex-col p-6">
               <h3 class="text-xl font-semibold text-white">Coffee Website</h3>
               <p class="mt-3 text-sm leading-7 text-slate-400">
                 A warm and inviting landing page with a clean layout, strong
@@ -555,12 +621,12 @@
                   >UI Design</span
                 >
               </div>
-              <div class="mt-5 flex flex-wrap gap-3">
+              <div class="mt-auto pt-6">
                 <a
                   href="https://sourav-das999.github.io/Coffee-Website/"
                   target="_blank"
                   rel="noreferrer"
-                  class="text-sm font-semibold text-brand-400 transition hover:text-brand-300"
+                  class="flex w-full items-center justify-center gap-2 rounded-xl border border-violet-400/50 bg-brand-500/10 px-4 py-3 text-sm font-semibold text-violet-100 transition hover:border-fuchsia-300 hover:bg-brand-500 hover:text-white hover:shadow-lg hover:shadow-violet-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                 >
                   View Project →
                 </a>
@@ -626,6 +692,37 @@
     </footer>
 
     <script>
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if ("IntersectionObserver" in window && !prefersReducedMotion) {
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+
+        document
+          .querySelectorAll(
+            "main h1, main h2, main h3, main p, main a, main button, main article, main .hover-lift, main img, main svg, footer p",
+          )
+          .forEach((element, index) => {
+            element.classList.add("reveal-item");
+            element.style.setProperty(
+              "--reveal-delay",
+              `${(index % 5) * 70}ms`,
+            );
+            revealObserver.observe(element);
+          });
+      }
+
       const menuButton = document.getElementById("menuButton");
       const mobileMenu = document.getElementById("mobileMenu");
 
