@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import portfolioImage from "../image/protfolio.png";
 import evenzaImage from "../image/evenza.png";
+import cleenyImage from "../image/Cleeny_Website.png";
 import coffeeImage from "../image/Coffee.png";
 import nasscorpImage from "../image/Nasscorp.png";
 import "./style.css";
@@ -444,6 +445,43 @@ export default function App() {
               <div className="mt-auto pt-6">
                 <a
                   href="https://evenza-website.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-violet-400/50 bg-brand-500/10 px-4 py-3 text-sm font-semibold text-violet-100 transition hover:border-fuchsia-300 hover:bg-brand-500 hover:text-white hover:shadow-lg hover:shadow-violet-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+                >
+                  View Project →
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            className="hover-lift flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
+          >
+            <div
+              className="h-40 bg-gradient-to-br from-violet-500/30 to-fuchsia-500/20"
+            >
+              <img src={cleenyImage} alt="cleeny" />
+            </div>
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-xl font-semibold text-white">Cleeny Website</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-400">
+                A modern website with a polished visual style and responsive
+                layout.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                <span
+                  className="rounded-full bg-slate-800 px-3 py-1 text-sm text-slate-300"
+                  >Business Website</span
+                >
+                <span
+                  className="rounded-full bg-slate-800 px-3 py-1 text-sm text-slate-300"
+                  >Responsive Design</span
+                >
+              </div>
+              <div className="mt-auto pt-6">
+                <a
+                  href="https://cleeny-website-sepia.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex w-full items-center justify-center gap-2 rounded-xl border border-violet-400/50 bg-brand-500/10 px-4 py-3 text-sm font-semibold text-violet-100 transition hover:border-fuchsia-300 hover:bg-brand-500 hover:text-white hover:shadow-lg hover:shadow-violet-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
