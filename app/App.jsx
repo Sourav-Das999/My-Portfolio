@@ -106,21 +106,18 @@ export default function App() {
 
     <main id="home">
       <section
-        className="hero-section relative isolate overflow-hidden px-6 py-16 sm:py-20 lg:px-8 lg:py-24"
+        className="hero-section relative isolate overflow-hidden px-6 py-14 sm:py-16 lg:px-8 lg:py-20"
       >
         <div className="hero-content animate-fade-up relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center text-center">
-          <p className="hero-eyebrow mb-4 text-sm font-semibold uppercase tracking-[0.3em]">
-            Frontend Developer
-          </p>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Sourav Das
+          <h1 className="max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            Thoughtful interfaces. Built to make an impact.
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
             I create polished, responsive web experiences that help ambitious
             brands stand out and connect with their audience.
           </p>
 
-          <div className="mt-8 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
+          <div className="mt-7 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
             <a
               href="#projects"
               className="hero-primary-cta inline-flex min-h-12 items-center justify-center rounded-full px-7 py-3 font-semibold text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020817]"
@@ -135,7 +132,7 @@ export default function App() {
             </a>
           </div>
 
-          <div className="hero-banner-frame mt-12 w-full">
+          <div className="hero-banner-frame mt-10 w-full sm:mt-12">
             <img
               className="hero-banner-image"
               src={heroBanner}

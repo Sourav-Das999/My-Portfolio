@@ -92,10 +92,6 @@
           #020817;
       }
 
-      .hero-eyebrow {
-        color: #55b5ff;
-      }
-
       .hero-primary-cta {
         background: #008cff;
         box-shadow: 0 8px 28px rgba(0, 140, 255, 0.24);
@@ -122,6 +118,9 @@
         position: relative;
         isolation: isolate;
         overflow: visible;
+        width: 100%;
+        max-width: 70rem;
+        margin-inline: auto;
         border: 1px solid rgba(115, 190, 255, 0.28);
         border-radius: 1.25rem;
         background: #020817;
