@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import heroBanner from "../image/portfolio-banner.png";
 import portfolioImage from "../image/protfolio.png";
 import evenzaImage from "../image/evenza.png";
 import cleenyImage from "../image/Cleeny_Website.png";
@@ -105,112 +106,42 @@ export default function App() {
 
     <main id="home">
       <section
-        className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28"
+        className="hero-section relative isolate overflow-hidden px-6 py-16 sm:py-20 lg:px-8 lg:py-24"
       >
-        <div className="animate-fade-up space-y-8">
-          <div
-            className="inline-flex items-center rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-sm text-brand-100"
-          >
-            <span className="mr-2 h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
-            Frontend Developer • React • Tailwind CSS
-          </div>
+        <div className="hero-content animate-fade-up relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center text-center">
+          <p className="hero-eyebrow mb-4 text-sm font-semibold uppercase tracking-[0.3em]">
+            Frontend Developer
+          </p>
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Sourav Das
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+            I create polished, responsive web experiences that help ambitious
+            brands stand out and connect with their audience.
+          </p>
 
-          <div className="space-y-4">
-            <p className="text-lg text-slate-400">Hello, I’m</p>
-            <h1
-              className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"
-            >
-              I build clean, fast, and user-friendly web experiences.
-            </h1>
-            <p className="max-w-2xl text-lg leading-8 text-slate-400">
-              I’m a frontend developer with 1+ years of experience and an NSDA
-              certificate, focused on crafting responsive interfaces, polished
-              UI, and delightful interactions. My goal is to grow into a
-              full-stack developer.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-4">
+          <div className="mt-8 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
             <a
               href="#projects"
-              className="rounded-full bg-brand-600 px-6 py-3 font-semibold text-white transition hover:bg-brand-500"
+              className="hero-primary-cta inline-flex min-h-12 items-center justify-center rounded-full px-7 py-3 font-semibold text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020817]"
             >
-              View Projects
+              View My Projects
             </a>
             <a
               href="#contact"
-              className="rounded-full border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-slate-500 hover:text-white"
+              className="hero-secondary-cta inline-flex min-h-12 items-center justify-center rounded-full border px-7 py-3 font-semibold text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020817]"
             >
-              Get In Touch
+              Contact Me
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-8 pt-4 text-sm text-slate-400">
-            <div>
-              <p className="text-2xl font-semibold text-white">1+ Year</p>
-              <p>Experience</p>
-            </div>
-            <div>
-              <p className="text-2xl font-semibold text-white">Frontend</p>
-              <p>Focus</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="animate-fade-up relative">
-          <div
-            className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-500/30 via-slate-800 to-slate-950 blur-3xl"
-          ></div>
-          <div
-            className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-black/40"
-          >
-            <div
-              className="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-800 to-slate-900 p-6"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-slate-400">Current Focus</p>
-                  <p className="text-xl font-semibold text-white">
-                    Frontend Development
-                  </p>
-                </div>
-                <div
-                  className="rounded-full bg-emerald-500/15 px-3 py-1 text-sm text-emerald-300"
-                >
-                  Available
-                </div>
-              </div>
-
-              <div className="mt-8 grid gap-4">
-                <div
-                  className="rounded-2xl border border-white/10 bg-slate-950/70 p-4"
-                >
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm text-slate-400">Performance</p>
-                    <p className="font-semibold text-brand-400">98%</p>
-                  </div>
-                  <div className="mt-3 h-2 rounded-full bg-slate-800">
-                    <div
-                      className="h-2 w-[98%] rounded-full bg-gradient-to-r from-brand-500 to-cyan-400"
-                    ></div>
-                  </div>
-                </div>
-
-                <div
-                  className="rounded-2xl border border-white/10 bg-slate-950/70 p-4"
-                >
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm text-slate-400">Accessibility</p>
-                    <p className="font-semibold text-brand-400">100%</p>
-                  </div>
-                  <div className="mt-3 h-2 rounded-full bg-slate-800">
-                    <div
-                      className="h-2 w-full rounded-full bg-gradient-to-r from-emerald-500 to-cyan-400"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="hero-banner-frame mt-12 w-full">
+            <img
+              className="hero-banner-image"
+              src={heroBanner}
+              alt="Sourav Das, frontend developer — modern web development portfolio banner"
+              fetchPriority="high"
+            />
           </div>
         </div>
       </section>
