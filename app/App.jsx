@@ -28,20 +28,46 @@ const skills = [
   },
 ];
 
+const sectionReveal = {
+  initial: { opacity: 0, y: 28 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.15 },
+  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+};
+
+const cardGridVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const cardItemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 export default function App() {
   return (
     <>
       <Header />
       <main id="home">
-        <motion.section
+        <section
           className="hero-section relative isolate overflow-hidden px-6 py-14 sm:py-16 lg:px-8 lg:py-20"
           aria-labelledby="hero-heading"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="hero-content relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center text-center">
+          <motion.div
+            className="hero-content relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center text-center"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          >
             <h1
               id="hero-heading"
               className="max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
@@ -56,13 +82,13 @@ export default function App() {
             <div className="mt-7 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
               <a
                 href="#projects"
-                className="hero-primary-cta inline-flex min-h-12 items-center justify-center rounded-full px-7 py-3 font-semibold text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020817]"
+                className="hero-primary-cta inline-flex min-h-12 items-center justify-center rounded-full px-7 py-3 font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020817]"
               >
                 View My Projects
               </a>
               <a
                 href="#contact"
-                className="hero-secondary-cta inline-flex min-h-12 items-center justify-center rounded-full border px-7 py-3 font-semibold text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020817]"
+                className="hero-secondary-cta inline-flex min-h-12 items-center justify-center rounded-full border px-7 py-3 font-semibold text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020817]"
               >
                 Contact Me
               </a>
@@ -82,17 +108,14 @@ export default function App() {
                 decoding="async"
               />
             </div>
-          </div>
-        </motion.section>
+          </motion.div>
+        </section>
 
         <motion.section
           id="about"
           className="mx-auto max-w-6xl px-6 py-16 lg:px-8"
           aria-labelledby="about-heading"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          {...sectionReveal}
         >
           <article className="hover-lift rounded-3xl border border-white/10 bg-slate-900/70 p-8 shadow-xl shadow-black/20 lg:p-12">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
@@ -128,10 +151,7 @@ export default function App() {
           id="skills"
           className="mx-auto max-w-6xl px-6 py-16 lg:px-8"
           aria-labelledby="skills-heading"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          {...sectionReveal}
         >
           <div className="mb-10">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-400">
@@ -144,15 +164,18 @@ export default function App() {
               Tools I use to build modern experiences.
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <motion.div
+            className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
+            variants={cardGridVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
             {skills.map((skill) => (
               <motion.article
                 key={skill.title}
+                variants={cardItemVariants}
                 className="hover-lift rounded-2xl border border-white/10 bg-slate-900/70 p-6"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <div className="skill-icon mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400">
                   <svg
@@ -179,7 +202,7 @@ export default function App() {
                 </p>
               </motion.article>
             ))}
-          </div>
+          </motion.div>
         </motion.section>
 
         <DeferredSections />
@@ -187,10 +210,10 @@ export default function App() {
 
       <motion.footer
         className="border-t border-white/10 px-6 py-8 text-center text-sm text-slate-400"
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <p>© 2026 Sourav Das. All rights reserved.</p>
       </motion.footer>

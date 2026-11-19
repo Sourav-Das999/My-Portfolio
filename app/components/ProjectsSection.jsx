@@ -72,6 +72,11 @@ function ProjectCard({ project }) {
       className="hover-lift flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{
+        scale: 1.04,
+        y: -5,
+        transition: { duration: 0.3, ease: "easeOut" },
+      }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
