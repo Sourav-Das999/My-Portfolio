@@ -154,7 +154,7 @@ export default function App() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400">
+                <div className="skill-icon mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400">
                   <svg
                     className="h-5 w-5"
                     fill="none"

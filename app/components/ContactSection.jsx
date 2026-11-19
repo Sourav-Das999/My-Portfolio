@@ -29,7 +29,7 @@ export default function ContactSection() {
           <address className="flex flex-wrap gap-3 not-italic">
             <a
               href="mailto:souravdas2087@gmail.com"
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10"
+              className="contact-link rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200"
               aria-label="Email Sourav Das"
             >
               souravdas2087@gmail.com
@@ -38,7 +38,7 @@ export default function ContactSection() {
               href="https://github.com/Sourav-Das999"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10"
+              className="contact-link rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200"
               aria-label="Visit Sourav Das on GitHub (opens in a new tab)"
             >
               GitHub
@@ -47,7 +47,7 @@ export default function ContactSection() {
               href="https://www.linkedin.com/in/sourav-das-03b970413"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10"
+              className="contact-link rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200"
               aria-label="Visit Sourav Das on LinkedIn (opens in a new tab)"
             >
               LinkedIn

@@ -75,9 +75,9 @@ function ProjectCard({ project }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className={`h-40 bg-gradient-to-br ${project.gradient}`}>
+      <div className={`project-image-frame h-40 bg-gradient-to-br ${project.gradient}`}>
         <img
-          className="block h-full w-full object-cover"
+          className="project-image block h-full w-full object-cover"
           src={project.image}
           alt={project.alt}
           width={project.imageWidth}
@@ -106,9 +106,23 @@ function ProjectCard({ project }) {
             href={project.href}
             target="_blank"
             rel="noreferrer"
-            className="flex w-full items-center justify-center gap-2 rounded-xl border border-violet-400/50 bg-brand-500/10 px-4 py-3 text-sm font-semibold text-violet-100 transition hover:border-fuchsia-300 hover:bg-brand-500 hover:text-white hover:shadow-lg hover:shadow-violet-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+            className="project-link flex w-full items-center justify-center gap-2 rounded-xl border border-violet-400/50 bg-brand-500/10 px-4 py-3 text-sm font-semibold text-violet-100 transition hover:border-fuchsia-300 hover:bg-brand-500 hover:text-white hover:shadow-lg hover:shadow-violet-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
-            View Project →
+            View Project
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 12h14m-7-7l7 7-7 7"
+              />
+            </svg>
           </a>
         </div>
       </div>

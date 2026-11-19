@@ -21,10 +21,10 @@ export default function Header() {
         </a>
 
         <div className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
-          <a href="#about" className="transition hover:text-white">About</a>
-          <a href="#skills" className="transition hover:text-white">Skills</a>
-          <a href="#projects" className="transition hover:text-white">Projects</a>
-          <a href="#contact" className="transition hover:text-white">Contact</a>
+          <a href="#about" className="nav-link transition hover:text-white">About</a>
+          <a href="#skills" className="nav-link transition hover:text-white">Skills</a>
+          <a href="#projects" className="nav-link transition hover:text-white">Projects</a>
+          <a href="#contact" className="nav-link transition hover:text-white">Contact</a>
         </div>
 
         <div className="flex items-center gap-3">
